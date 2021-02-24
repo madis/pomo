@@ -1,0 +1,20 @@
+{:source-paths
+ ["src"] ;; .cljs files go here
+
+ :dependencies
+ [] ;; covered later
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+
+        :modules
+        {:main ;; <- becomes public/js/main.js
+         {:entries [pomo.app]}}
+
+        ;; start a development http server on http://localhost:8020
+        :devtools
+        {:http-root "public"
+         :http-port 8020}
+        }}}
