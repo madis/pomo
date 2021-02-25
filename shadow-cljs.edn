@@ -2,7 +2,9 @@
  ["src"] ;; .cljs files go here
 
  :dependencies
- [] ;; covered later
+ [[re-frame "1.2.0"]
+  [bidi "2.1.6"]
+  [binaryage/devtools "1.0.2"]]
 
  :builds
  {:app {:target :browser

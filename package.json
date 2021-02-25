@@ -1,0 +1,17 @@
+{
+  "name": "pomo",
+  "version": "0.0.1",
+  "description": "Pomodoro method using re-frame",
+  "main": "index.js",
+  "dependencies": {
+    "react": "17.0.0",
+    "react-dom": "17.0.1",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
