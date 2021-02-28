@@ -13,7 +13,8 @@
 
         :modules
         {:main ;; <- becomes public/js/main.js
-         {:entries [pomo.app]}}
+         {:entries [pomo.app]
+          :init-fn pomo.app/init}}
 
         ;; start a development http server on http://localhost:8020
         :devtools
