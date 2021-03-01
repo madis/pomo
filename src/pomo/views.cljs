@@ -11,11 +11,14 @@
     (println "Things are" timer-started button-text)
     [:div
      [:div.timer progress]
-     [:button.timer-toggle {:on-click #(re/dispatch [:timer-toggle timer-started])} button-text]]))
+     [:button.timer-toggle {:class "pure-button"
+                            :on-click #(re/dispatch [:timer-toggle timer-started])} button-text]]))
 
 (defn main-layout []
-  [:div
-   [:h1 "The Pomo Rpp"]
-   [timer]])
+  [:div.pure-g
+   [:div.pure-u-1-3]
+   [:div.pure-u-1-3
+    [:h1 "The Pomo App"]
+    [timer]]])
 
 (defn pomo-app [] [main-layout])
