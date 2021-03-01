@@ -6,6 +6,8 @@
   [bidi "2.1.6"]
   [binaryage/devtools "1.0.2"]]
 
+ :nrepl {:port 37199}
+
  :builds
  {:app {:target :browser
         :output-dir "public/js"
