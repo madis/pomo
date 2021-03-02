@@ -4,3 +4,10 @@
   font-size: 120px;
   font-weight: bold;
 }
+
+.swiper-container {
+  background: gray;
+  width: 600px;
+  height: 300px;
+}
+
