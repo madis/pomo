@@ -2,9 +2,10 @@
   (:require [re-frame.core :refer [dispatch-sync]]
             [reagent.core :as reagent]
             [reagent.dom :as rdom]
-            [pomo.events]  ;; These three are only
-            [pomo.subs]    ;; required to make the compiler
-            [pomo.views])) ;; load them
+            [pomo.events]
+            [pomo.subs]
+            [pomo.views]
+            [pomo.effects]))
 
 (defn ^:dev/before-load stop []
   (js/console.log "stop"))
