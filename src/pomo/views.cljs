@@ -3,14 +3,22 @@
             [re-frame.core :refer [subscribe dispatch] :as re]
             [clojure.string :as str :refer [trim split join]]))
 
-(defn timer []
-  (let [progress "10:00"
-        timer-started @(re/subscribe [:timer-activation])
-        button-text (if timer-started "Stop" "Start")]
+(defn minutes-left [seconds]
+  (Math/floor (/ seconds 60)))
 
-    (println "Things are" timer-started button-text)
+(defn seconds-left [seconds]
+  (rem seconds 60))
+
+(defn time-left [seconds]
+  (str (minutes-left seconds) ":" (seconds-left seconds)))
+
+(defn timer []
+  (let [progress @(re/subscribe [:time-left])
+        timer-started @(re/subscribe [:timer-activation])
+        timer-update @(re/subscribe [:timer-update])
+        button-text (if timer-started "Stop" "Start")]
     [:div
-     [:div.timer progress]
+     [:div.timer (time-left progress)]
      [:button.timer-toggle {:class "pure-button"
                             :on-click #(re/dispatch [:timer-toggle timer-started])} button-text]]))
 
