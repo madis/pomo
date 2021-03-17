@@ -1,5 +1,8 @@
 (ns pomo.app
   (:require [re-frame.core :refer [dispatch-sync]]
+            [mount.core :as mount]
+            [pomo.graphql]
+            [cljsjs.apollo-fetch]
             [reagent.core :as reagent]
             [reagent.dom :as rdom]
             [pomo.events]  ;; These three are only
@@ -11,6 +14,7 @@
 
 (defn ^:dev/after-load start []
   (js/console.log "start")
+  (mount/start)
   (rdom/force-update-all))
 
 (defn ^:export init
