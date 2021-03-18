@@ -1,6 +1,4 @@
-(ns pomo.graphql
-  (:require [district.ui.graphql]
-            [mount.core :as mount :refer-macros [defstate]]))
+(ns pomo.graphql)
 
 (def schema "
    scalar Date
@@ -33,6 +31,3 @@
      item_price: Float
    }
 ")
-
-
-(-> (mount/with-args {:graphql {:schema schema :url "http://localhost:4567"}}))

@@ -22,12 +22,14 @@
                                   [:cart-item/item [:item/title
                                                     :item/price]]]]]]]})
 (def query-as-string
-  "Query ($id: ID!) { candidate(user_id: $id) { user_address cart_items { title price } } }")
+  "query ($id: ID!) { user(user_id: $id) { user_address user_cartItems { cartItem_item { item_title item_price } } } }")
 
 (defn gql-show []
   (let [
+        query (atom {})
         _ (println "-----> 1. Going for a query")
-        query (subscribe [::gql/query "{ query { sanity }}"])
+        ; query (subscribe [::gql/query "query { sanity }"])
+        ; query (subscribe [::gql/query {:queries [[:query {} [:sanity]]]}])
         ; query (subscribe [::gql/query query-as-string])
         ; query (subscribe [::gql/query {:queries [query-as-string]}])
         ; query (subscribe [::gql/query query-as-vector])
