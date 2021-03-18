@@ -23,7 +23,7 @@
           (reset! ze-state {:state "Stop"})))
 
 (defn start-mount []
-  (-> (mount/with-args {:graphql {:schema pomo.graphql/schema :url "http://localhost:4567"}})
+  (-> (mount/with-args {:graphql {:schema pomo.graphql/schema :url "http://garage:4567/"}})
       mount/start))
 
 (defn ^:dev/before-load stop []

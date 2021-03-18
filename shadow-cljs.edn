@@ -5,7 +5,9 @@
  [[re-frame "1.2.0"]
   [mount "0.1.16"]
   [bidi "2.1.6"]
+  [district0x/district-graphql-utils "1.0.10"]
   [district0x/district-ui-graphql "1.0.13"]
+  [district0x/graphql-query "1.0.6"]
   [cljsjs/apollo-fetch "0.7.0-0"]
   [binaryage/devtools "1.0.2"]]
 
